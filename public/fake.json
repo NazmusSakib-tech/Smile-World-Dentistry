@@ -1,0 +1,67 @@
+[
+    {
+        "id": 1,
+        "name": "General Dentistry",
+        "shortdescribe": "Our practice provides general dentistry procedures including the prevention, diagnosis, and treatment of a wide variety of conditions and diseases that affect your teeth and gums.",
+        "fulldescribtion": "At Smile world Family Dental, we work with each and every patient to establish a customized dental hygiene plan that incorporates dental exams, x-rays, thorough teeth cleanings, tooth scaling and deep cleaning (if necessary), as well as the use of other diagnostic equipment to prevent and treat conditions that affect your oral health.",
+        "image": "https://www.smileworlddental.com/images/dental-services/general-dentistry.jpg"
+    },
+    {
+        "id": 2,
+        "name": "Family Dentistry",
+        "shortdescribe": "Welcome to Smile world Family Dental, where we offer dentistry services for the entire family.",
+        "fulldescribtion": "Our patient’s satisfaction is our top priority. We strive to exceed your expectations through our professionalism and expertise. We gladly provide oral hygiene demonstrations for both the young ones and adults, to ensure your family is familiar with proper brushing and flossing techniques.",
+        "image": "https://www.smileworlddental.com/images/dental-services/family-dentistry.jpg"
+    },
+
+    {
+        "id": 3,
+        "name": "Orthodontics",
+        "shortdescribe": "Orthodontics are an excellent way to straighten your teeth. While orthodontic treatments are used to straighten teeth for an enhanced smile.",
+        "fulldescribtion": "Orthodontics are an excellent way to straighten your teeth. While orthodontic treatments are used to straighten teeth for an enhanced smile, they can also help restore functionality to teeth, jaw, and bite.The American Association of Orthodontists (AAO) recommends that all children should have an evaluation with an orthodontist by the age of 7 regardless of how many teeth have erupted.",
+        "image": "https://www.smileworlddental.com/images/dental-services/orthodontics.jpg"
+    },
+    {
+        "id": 4,
+        "name": "Cosmetic Dentistry",
+        "shortdescribe": "Smile world Family Dental offers cosmetic dentistry services that are designed to improve the appearance of your smile through the use of advanced dental procedures.",
+        "fulldescribtion": "Smile world Family Dental offers cosmetic dentistry services that are designed to improve the appearance of your smile through the use of advanced dental procedures. A dazzling smile is a necessary asset in today’s society. From job interviews to relationships and dating, a nice smile gives you the ability to make lasting first impressions, which comes with many benefits.",
+        "image": "https://www.smileworlddental.com/images/dental-services/cosmetic-dentistry.jpg"
+    },
+    {
+        "id": 5,
+        "name": "Dental Exam & Cleaning",
+        "shortdescribe": "Regular dental cleanings and exams are vital to maintaining your oral health and preventing future complications.",
+        "fulldescribtion": "The American Dental Association (ADA) recommends that patients visit a dentist twice every year. Most insurances will cover two visits as a result of this recommendation. This is because traditional brushing methods are unable to remove tartar, though plaque prevention is still possible.",
+        "image": "https://www.smileworlddental.com/images/dental-services/exam-cleaning.jpg"
+    },
+    {
+        "id": 6,
+        "name": "Teeth Whitening",
+        "shortdescribe": "Teeth whitening is a very popular cosmetic dentistry procedure that aims at improving your tooth’s appearance by restoring enamel to its natural color- white.",
+        "fulldescribtion": "Teeth whitening performed in our office is far more powerful and effective than the treatments found at your local drug or grocery store.Teeth whitening treatments performed in our dentist's office are guaranteed to whiten your teeth by at least a few shades. The severity of the discoloration on your teeth will determine how many appointments you will need until your they are completely whitened. ",
+        "image": "https://www.smileworlddental.com/images/dental-services/teeth-whitening.jpg"
+    },
+    {
+        "id": 7,
+        "name": "Dental Crowns",
+        "shortdescribe": "A tooth that is broken, damaged, or in general poor condition can be harmful to your health. It can also affect feeling comfortable about your tooth and your self-confidence.",
+        "fulldescribtion": "Crowns also replace severe cases of tooth decay that have resulted in a large amount of tooth loss. Crowns allow dentists to restore form and function to your tooth without needing to perform an extraction. It is always best to save as much real tooth/enamel as possible. ",
+        "image": "https://www.smileworlddental.com/images/dental-services/dental-crowns.jpg"
+    },
+    {
+        "id": 8,
+        "name": "Dental Implant Restoration",
+        "shortdescribe": "Dental implants have had a considerable impact on modern dentistry – offering a highly viable solution to replacing missing teeth. We offer dental implant restorations.",
+        "fulldescribtion": "Dental implants have had a considerable impact on modern dentistry – offering a highly viable solution to replacing missing teeth. We offer dental implant restorations.A dental implant (also known as an endosseous implant or fixture) is a surgical component that interfaces with the bone of the jaw or skull to support a dental prosthesis such as a crown, bridge, denture, or facial prosthesis or to act as an orthodontic anchor. The basis for modern dental implants is a biologic process called osseointegration, in which materials such as titanium or zirconia form an intimate bond to bone. ",
+        "image": "https://www.smileworlddental.com/images/dental-services/dental-implants.jpg"
+    },
+    {
+        "id": 9,
+        "name": "Root Canal",
+        "shortdescribe": "A root canal is a procedure specifically designed to save you from losing a tooth. Our teeth are comprised of certain parts, one of them being the pulp.",
+        "fulldescribtion": "A root canal is a procedure specifically designed to save you from losing a tooth. Our teeth are comprised of certain parts, one of them being the pulp. A tooth’s pulp is where the nerve, blood vessels, and connective tissue are housed. When this area becomes inflamed or infected, then a root canal procedure must be taken in order to save that tooth from falling right out of your mouth.",
+        "image": "https://www.smileworlddental.com/images/dental-services/root-canal.jpg"
+    }
+
+]

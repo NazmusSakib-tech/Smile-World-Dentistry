@@ -1,18 +1,32 @@
 import React, { useState } from 'react';
 import { Button, Card, Form } from 'react-bootstrap';
+import { useHistory, useLocation } from 'react-router';
 import useAuth from '../../hooks/useAuth';
-import useFirebase from '../../hooks/useFirebase';
+
 
 
 const Login = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const { signInUsingGoogle, logIn } = useAuth()
+    const { signInUsingGoogle, logIn, } = useAuth()
 
+    const location = useLocation();
+    const redirect_uri = location.state?.from || "/home";
+    const  history =  useHistory()
+
+    const handleGoogleLogin = () => {
+        signInUsingGoogle()
+        .then(() => {
+            history.push(redirect_uri)
+        })
+    }
     const handleLogin = (e) => {
         console.log(email, password);
         e.preventDefault();
-        logIn(email, password);
+        logIn(email, password)
+        .then(() => {
+            history.push(redirect_uri);
+        })
     }
 
     const handleEmail = (e) => {
@@ -23,6 +37,8 @@ const Login = () => {
         setPassword(e.target.value);
 
     }
+
+    
 
     return (
         <>
@@ -52,7 +68,7 @@ const Login = () => {
                 </Card.Body>
             </Card>
 
-            <button onClick={signInUsingGoogle}>Google sign in</button>
+            <button onClick={handleGoogleLogin}>Google sign in</button>
         </>
     );
 };

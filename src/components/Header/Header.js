@@ -2,7 +2,7 @@ import React from 'react';
 import { Container, Nav, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
-import useFirebase from '../../hooks/useFirebase';
+import headerLogo from "../../utilities/header-logo/header-logo.jpg"
 
 const Header = () => {
     const {user, logOut} = useAuth()
@@ -10,11 +10,11 @@ const Header = () => {
         <>
             <Navbar collapseOnSelect expand="lg">
                 <Container>
-                    <Navbar.Brand href="/home">
+                    <Navbar.Brand as={Link} to="/home">
                         <img
-                            src=""
-                            width="100"
-                            height="35"
+                            src={headerLogo}
+                            width="200"
+                            height="90"
                             className="d-inline-block align-top"
                             alt="React Bootstrap logo"
                         />
@@ -24,9 +24,8 @@ const Header = () => {
                         <Nav.Link as={Link} to="#home"><i className="fas fa-shopping-cart text-dark"></i></Nav.Link>
                         <Nav.Link className="text-dark fw-bold" as={Link} to="/home">Home</Nav.Link>
                         <Nav.Link className="text-dark fw-bold" as={Link} to="#">Treatments</Nav.Link>
-                        <Nav.Link className="text-dark fw-bold" as={Link} to="/login">Login</Nav.Link>
                         {user?.email && <button onClick={logOut}>Log Out</button>}
-                        <Nav.Link className="btn-red bg-danger" as={Link} to="/register">Register</Nav.Link>
+                        <Nav.Link className="btn btn-warning" as={Link} to="/register">Register/Login</Nav.Link>
                        { user?.email && <Navbar.Text className="ms-2 text-primary">
                             Signed in as: <span>{user.displayName}</span>
                         </Navbar.Text>}

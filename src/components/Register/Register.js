@@ -1,19 +1,53 @@
 import React, { useState } from 'react';
 import { Button, Card, Form } from 'react-bootstrap';
+import { useHistory, useLocation } from 'react-router';
 import useAuth from '../../hooks/useAuth';
 
 
 
 const Register = () => {
-    const {registration, error} = useAuth();
+    const location = useLocation();
+    const redirect_uri = location.state?.from || "/home";
+    const  history =  useHistory()
+
+
+    const {registration, error, logIn, signInUsingGoogle} = useAuth();
+
+    const [name, setName,] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [checkbox, setcheckbox] = useState(false);
+
+    const handleCheckBox= (e) => {
+        setcheckbox(e.target.checked);
+    }
+
+
+    const handleGoogleLogin = () => {
+        signInUsingGoogle()
+        .then(() => {
+            history.push(redirect_uri)
+        })
+    }
+
+
+    const handleLogin = () => {
+        console.log(email, password);
+        logIn(email, password)
+        .then(() => {
+            history.push(redirect_uri);
+        })
+    }
     
-    const handleRegistration = (e) =>{
-        console.log(email,password);
-        e.preventDefault();
-        registration(email, password)
-        alert(error);
+    const handleRegistration = () =>{
+        console.log(email,password,name);
+        registration(email, password, name)
+        .then(() => {
+            history.push(redirect_uri);
+        })
+    }
+    const handleName = (e) =>{
+        setName(e.target.value);
     }
 
     const handleEmail = (e) =>{
@@ -29,8 +63,15 @@ const Register = () => {
         <>
             <Card style={{ width: '25rem' }} className="m-auto">
                 <Card.Body>
-                    <h2 className="text-center mb-4">Register</h2>
-                    <Form onSubmit={handleRegistration}>
+                    <h2 className="text-center mb-4">{checkbox?"Login" : "Register"}</h2>
+                    <Form onSubmit={(e)=> {e.preventDefault(); checkbox? handleLogin(): handleRegistration()}}>
+
+                    {checkbox? "" :<Form.Group className="mb-3" controlId="formBasicEmail">
+                            <Form.Label>Your Name</Form.Label>
+                            <Form.Control onBlur={handleName} type="text" placeholder="Enter Name" required />
+                            
+                        </Form.Group>}
+
                         <Form.Group className="mb-3" controlId="formBasicEmail">
                             <Form.Label>Email address</Form.Label>
                             <Form.Control onBlur={handleEmail} type="email" placeholder="Enter email" required />
@@ -44,14 +85,17 @@ const Register = () => {
                             <Form.Control onBlur={handlePassword} type="password" placeholder="Password" required />
                         </Form.Group>
                         <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                            <Form.Check type="checkbox" label="Check me out" />
+                            <Form.Check onClick={handleCheckBox} type="checkbox" label="Is Already Registered?" />
                         </Form.Group>
                         <Button variant="primary" type="submit">
                             Submit
                         </Button>
+                         <p>{error}</p> 
                     </Form>
+                    {checkbox? <Button onClick={handleGoogleLogin}>Google SignIn</Button> : ""}
                 </Card.Body>
             </Card>
+            
         </>
     );
 };
