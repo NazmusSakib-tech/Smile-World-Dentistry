@@ -9,7 +9,7 @@ initializitionFirebase();
 
 const useFirebase = () => {
     const [user, setUser] = useState({})
-    const [error, setError] = useState(" ")
+    const [error, setError] = useState("")
     const [isLoading, setLoading] = useState(true)
     const auth = getAuth();
 
@@ -59,7 +59,7 @@ const useFirebase = () => {
                 
             })
             .catch((error) => {
-                setError(error.massage);
+                setError(error.massage)
             }).finally(() => {
                 setLoading(false);
             })

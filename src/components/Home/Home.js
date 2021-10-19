@@ -1,12 +1,14 @@
 import React from 'react';
 import { Container, Nav, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import './Home.css'
 import useServices from '../../hooks/useServices';
 import sliderPic1 from '../../utilities/slider-image/sld1.jpg'
 import sliderPic2 from '../../utilities/slider-image/sld2.jpg'
 import Service from '../Service/Service';
 import doctor1 from '../../utilities/doctor/doctor1.jpg'
 import about from '../../utilities/doctor/about.jpg'
+import doctor2 from '../../utilities/doctor/doctor2.png'
 
 const Home = () => {
 
@@ -53,8 +55,8 @@ const Home = () => {
             {/* doctor section  */}
             <section>
 
-                <div className="container mt-4">
-                    <h2 className="text-primary">Your Family Deserves the Best Dental Care</h2>
+                <div className="container mb-2 p-4">
+                    <h2 className="text-primary mb-4">Your Family Deserves the Best Dental Care</h2>
                     <div class="row row-cols-1 row-cols-md-3 g-4">
                         <div class="col">
                             <div class="card h-100">
@@ -76,14 +78,23 @@ const Home = () => {
                         </div>
                         <div class="col">
                             <div class="card h-100">
-                                <img src="..." class="card-img-top" alt="..." />
+                                <img src={doctor2} class="card-img-top" alt="..." />
                                 <div class="card-body">
-                                    <h5 class="card-title">Card title</h5>
-                                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
+                                    <h5 class="card-title">Dr. Neha Asudani</h5>
+                                    <p class="card-text">Dr. Neha Assudani is an Orthodontist, Cosmetic/Aesthetic Dentist and Dentist in Naroda Road. </p>
                                 </div>
                             </div>
                         </div>
+                    </div>
+                </div>
+            </section>
 
+
+            <section className="section section-team backgroundPara">
+                <div className="shell">
+                    <div className="team">
+                        <h1>Quality Dental Care in Cupertino, CA</h1>
+                        <h3>We understand the importance of having a dental practice that provides you with exceptional care in a family friendly environment.</h3>
                     </div>
                 </div>
             </section>

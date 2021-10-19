@@ -8,7 +8,7 @@ import useAuth from '../../hooks/useAuth';
 const Register = () => {
     const location = useLocation();
     const redirect_uri = location.state?.from || "/home";
-    const  history =  useHistory()
+    const  history =  useHistory();
 
 
     const {registration, error, logIn, signInUsingGoogle} = useAuth();
@@ -35,7 +35,7 @@ const Register = () => {
         console.log(email, password);
         logIn(email, password)
         .then(() => {
-            history.push(redirect_uri);
+           history.push(redirect_uri)
         })
     }
     
@@ -90,7 +90,7 @@ const Register = () => {
                         <Button variant="primary" type="submit">
                             Submit
                         </Button>
-                         <p>{error}</p> 
+                         <p>{console.log(error)}</p> 
                     </Form>
                     {checkbox ===false? <Button onClick={handleGoogleLogin}>Google SignIn</Button> : ""}
                 </Card.Body>
