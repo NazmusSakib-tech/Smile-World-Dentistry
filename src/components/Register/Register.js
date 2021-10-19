@@ -63,10 +63,10 @@ const Register = () => {
         <>
             <Card style={{ width: '25rem' }} className="m-auto">
                 <Card.Body>
-                    <h2 className="text-center mb-4">{checkbox?"Login" : "Register"}</h2>
-                    <Form onSubmit={(e)=> {e.preventDefault(); checkbox? handleLogin(): handleRegistration()}}>
+                    <h2 className="text-center mb-4">{checkbox===false? "Login" : "Register"}</h2>
+                    <Form onSubmit={(e)=> {e.preventDefault(); checkbox ===false? handleLogin(): handleRegistration()}}>
 
-                    {checkbox? "" :<Form.Group className="mb-3" controlId="formBasicEmail">
+                    {checkbox ===false? "" :<Form.Group className="mb-3" controlId="formBasicEmail">
                             <Form.Label>Your Name</Form.Label>
                             <Form.Control onBlur={handleName} type="text" placeholder="Enter Name" required />
                             
@@ -85,14 +85,14 @@ const Register = () => {
                             <Form.Control onBlur={handlePassword} type="password" placeholder="Password" required />
                         </Form.Group>
                         <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                            <Form.Check onClick={handleCheckBox} type="checkbox" label="Is Already Registered?" />
+                            <Form.Check onClick={handleCheckBox} type="checkbox" label="New User?" />
                         </Form.Group>
                         <Button variant="primary" type="submit">
                             Submit
                         </Button>
                          <p>{error}</p> 
                     </Form>
-                    {checkbox? <Button onClick={handleGoogleLogin}>Google SignIn</Button> : ""}
+                    {checkbox ===false? <Button onClick={handleGoogleLogin}>Google SignIn</Button> : ""}
                 </Card.Body>
             </Card>
             
