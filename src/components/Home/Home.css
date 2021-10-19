@@ -9,8 +9,8 @@
     background-position: 50%;
     background-attachment: fixed;
     transform: translateZ(-999px) scale(1.1);
-    z-index: 3;
-    margin: 0px 0;
+    z-index: -1;
+    margin: 25px 0;
     overflow: hidden;
 }
 .shell {
@@ -51,6 +51,16 @@
 /*************Media Query*********/
 
 @media only screen and (max-width: 767px) {
+
+    .test{
+        margin:10px;
+    }
+    .test2{
+        padding:20px;
+    }
+    .backgroundPara{
+        overflow: hidden;
+    }
 
     .team {
         position: absolute;

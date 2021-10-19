@@ -11,11 +11,7 @@ const ServiceDetails = () => {
 
     return (
         <>
-            {/* <div>
-                <h1>details page {treatmentId}</h1>
-                <h1>{treatment?.name}</h1>
-                <img src={treatment?.image} alt="" />
-            </div> */}
+            
             <div class="card mb-3 container" style={{ width: '40rem', height: '40rem' }}>
                 <img src={treatment?.image} class="card-img-top image-fluid w-100" style={{height:"500px"}} alt="..."/>
                 <div class ="card-body">

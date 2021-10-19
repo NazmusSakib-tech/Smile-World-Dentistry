@@ -7,13 +7,15 @@ const AllTreatments = () => {
 
     return (
         <>
-            <h2>Our All Treatments</h2>
-            <div className="row row-cols-1 row-cols-md-4 g-4">
-                
-                {
-                    allTreatments.map(treatment => (<AllTreatmentChild key={treatment.id} 
-                        treatment={treatment}></AllTreatmentChild>))
-                }
+            <div className="container">
+                <h2>Our All Treatments</h2>
+                <div className="row row-cols-1 row-cols-md-4 g-4">
+
+                    {
+                        allTreatments.map(treatment => (<AllTreatmentChild key={treatment.id}
+                            treatment={treatment}></AllTreatmentChild>))
+                    }
+                </div>
             </div>
         </>
     );

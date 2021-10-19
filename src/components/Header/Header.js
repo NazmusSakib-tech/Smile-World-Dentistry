@@ -1,5 +1,6 @@
 import React from 'react';
 import { Container, Nav, Navbar, Button } from 'react-bootstrap';
+import './Header.css'
 import { Link } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
 import headerLogo from "../../utilities/header-logo/header-logo.jpg"
@@ -28,11 +29,12 @@ const Header = () => {
                         <Nav.Link className="text-dark fw-bold" as={Link} to="/home">Home</Nav.Link>
                         <Nav.Link className="text-dark fw-bold" as={Link} to="/alltreatments">Treatments</Nav.Link>
                         <Nav.Link className="text-dark fw-bold" as={Link} to="/teethsuggestion">Teeth Suggestions</Nav.Link>
-                        {user?.email && <Button className="mx-2" onClick={logOut}>Log Out</Button>}
+                        
                         <Nav.Link className="btn btn btn-warning" as={Link} to="/register">Register/Login</Nav.Link>
                         {user?.email && <Navbar.Text className="ms-2 text-primary">
                             Signed in as: <span className="text-dark">{user.displayName}</span>
                         </Navbar.Text>}
+                        {user?.email && <Button className="mx-2 logout-btn" onClick={logOut}>Log Out</Button>}
                     </Navbar.Collapse>
                 </Container>
             </Navbar>
