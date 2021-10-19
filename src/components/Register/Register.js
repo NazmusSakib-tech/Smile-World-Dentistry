@@ -43,7 +43,8 @@ const Register = () => {
         console.log(email,password,name);
         registration(email, password, name)
         .then(() => {
-            history.push(redirect_uri);
+            // history.push(redirect_uri);
+            setcheckbox(false)
         })
     }
     const handleName = (e) =>{
@@ -87,13 +88,13 @@ const Register = () => {
                         <Form.Group className="mb-3" controlId="formBasicCheckbox">
                             <Form.Check onClick={handleCheckBox} type="checkbox" label="New User?" />
                         </Form.Group>
-                        <Button variant="primary" type="submit">
+                        <Button variant="primary" type="submit" className="mb-2">
                             Submit
                         </Button>
-                         <p>{console.log(error)}</p> 
                     </Form>
                     {checkbox ===false? <Button onClick={handleGoogleLogin}>Google SignIn</Button> : ""}
                 </Card.Body>
+                <p>{error}</p>
             </Card>
             
         </>

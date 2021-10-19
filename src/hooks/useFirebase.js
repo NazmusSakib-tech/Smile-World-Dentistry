@@ -1,6 +1,6 @@
 import {
     getAuth, signInWithPopup, GoogleAuthProvider, signOut, onAuthStateChanged,
-    createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile 
+    createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile
 } from "firebase/auth";
 import { useEffect, useState } from "react";
 import initializitionFirebase from "../firebase/firebase.init";
@@ -16,13 +16,17 @@ const useFirebase = () => {
     // google sign in 
     const signInUsingGoogle = () => {
         setLoading(true);
+        setError("");
         const googlePovider = new GoogleAuthProvider();
         return signInWithPopup(auth, googlePovider)
             .then((result) => {
                 console.log(result?.user);
                 setUser(result?.user);
                 setLoading(false);
-            }).finally(() => {
+            }).catch((error) => {
+                setError(error.message);
+            })
+            .finally(() => {
                 setLoading(false);
             })
     }
@@ -30,14 +34,16 @@ const useFirebase = () => {
     // ***************By email Register in************* 
     const registration = (email, password, name) => {
         setLoading(true);
-       return createUserWithEmailAndPassword(auth, email, password)
-       
+        setError("");
+        return createUserWithEmailAndPassword(auth, email, password)
+
             .then(() => {
-                updateProfile(auth.currentUser, {displayName: name})
-                  .catch(error => {
-                    setError(error.massage)
-                  })
-                  setLoading(false);
+                setUser({});
+                updateProfile(auth.currentUser, { displayName: name })
+                    .catch(error => {
+                        setError(error.massage)
+                    });
+                logOut();
             })
             .catch((error) => {
                 setError(error.massage)
@@ -50,14 +56,8 @@ const useFirebase = () => {
     //*********************By email Log In*************/
     const logIn = (email, password) => {
         setLoading(true);
+        setError("");
         return signInWithEmailAndPassword(auth, email, password)
-            .then((result) => {
-                // Signed in 
-                console.log(result?.user);
-                // setUser(result?.user);
-                // ...
-                
-            })
             .catch((error) => {
                 setError(error.massage)
             }).finally(() => {
@@ -67,6 +67,7 @@ const useFirebase = () => {
 
     const logOut = () => {
         setLoading(true);
+        setError("");
         return signOut(auth).then(() => {
             // Sign-out successful.
             setUser({})
@@ -83,16 +84,27 @@ const useFirebase = () => {
     useEffect(() => {
         return onAuthStateChanged(auth, (user) => {
             if (user) {
-                // User is signed in, see docs for a list of available properties
-                // https://firebase.google.com/docs/reference/js/firebase.User
+
                 setUser(user)
-                // ...
+
             } else {
                 setUser({})
             }
             setLoading(false);
         })
-    }, [])
+    }, [auth]);
+
+    useEffect(() => {
+        if (error === "Firebase: Error (auth/user-not-found).") {
+            setError("There is no account with this Email");
+        }
+        if (error === "Firebase: Error (auth/email-already-in-use).") {
+            setError("This email already have an account.");
+        }
+        if (error === "Firebase: Error (auth/wrong-password).") {
+            setError("You have entered wrong Password.");
+        }
+    }, [error]);
     return {
         signInUsingGoogle,
         user,
