@@ -9,8 +9,8 @@ const ServiceDetails = () => {
 
     return (
         <>
-            <div className="card mb-3 container" style={{ width: '40rem', height: '40rem' }}>
-                <img src={treatment?.image} className="card-img-top image-fluid w-100" style={{ height: "500px" }} alt="..." />
+            <div className="card mb-3 container">
+                <img src={treatment?.image} className="card-img-top w-100" style={{ height: "500px" }} alt="..." />
                 <div className="card-body">
                     <h5 className="card-title">{treatment?.name}</h5>
                     <p className="card-text">{treatment?.fulldescribtion}</p>
