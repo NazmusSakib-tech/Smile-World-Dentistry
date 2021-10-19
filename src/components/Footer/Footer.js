@@ -5,10 +5,11 @@ import "./Footer.css"
 
 const Footer = () => {
     return (
+            
         <div className="footer">
             <div className="container ">
                 <div className="row">
-                    <div className="col-md-4">
+                    <div className="col-md-4 col-4">
                         <ul className="border-right">
                             <li>Home</li>
                             <li>Treatments</li>
@@ -17,7 +18,7 @@ const Footer = () => {
                         </ul>
                     </div>
 
-                    <div className="col-md-3">
+                    <div className="col-md-3 col-4">
 
                         <ul className="border-right">
                             <li>General Dentistry</li>
@@ -27,7 +28,7 @@ const Footer = () => {
 
                         </ul>
                     </div>
-                    <div className="col-md-3">
+                    <div className="col-md-3 col-4">
                         <ul className="border-right">
                             <li>FaceBook</li>
                             <li>Twitter</li>
@@ -39,7 +40,7 @@ const Footer = () => {
                 </div>
 
             </div>
-            <p className="mb-0">Copyright © 2020 - 2021  SMILE WORLD DENTISTRY. All rights reserved.</p>
+            {/* <p className="mb-0">Copyright © 2020 - 2021  SMILE WORLD DENTISTRY. All rights reserved.</p> */}
         </div>
     );
 };

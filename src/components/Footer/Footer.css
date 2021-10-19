@@ -1,3 +1,4 @@
+
 .footer {
     background-color:#e9fffd ;
     margin-top:10px;
@@ -15,4 +16,23 @@ ul li{
 .border-right{
     border-right: 1px solid orange;
     margin-top: 15px;
+}
+
+
+/*************Media Query******/
+
+@media only screen and (max-width: 767px) {
+    ul li{
+    
+        font-size:15px;
+        padding:0px;
+    }
+
+
+    .border-right{
+        border-right: 1px solid orange;
+        margin-top: 15px;
+        margin-left: -40px;
+        overflow: hidden;
+    }
 }
