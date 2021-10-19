@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Service = (props) => {
-    console.log(props.service)
+   
     const { id, name, image, shortdescribe } = props.service;
     return (
         <>

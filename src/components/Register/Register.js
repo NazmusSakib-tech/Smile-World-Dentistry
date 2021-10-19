@@ -92,7 +92,7 @@ const Register = () => {
                             Submit
                         </Button>
                     </Form>
-                    {checkbox ===false? <Button onClick={handleGoogleLogin}>Google SignIn</Button> : ""}
+                    <Button onClick={handleGoogleLogin}>Google SignIn</Button>
                 </Card.Body>
                 <p>{error}</p>
             </Card>

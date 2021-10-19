@@ -94,17 +94,7 @@ const useFirebase = () => {
         })
     }, [auth]);
 
-    useEffect(() => {
-        if (error === "Firebase: Error (auth/user-not-found).") {
-            setError("There is no account with this Email");
-        }
-        if (error === "Firebase: Error (auth/email-already-in-use).") {
-            setError("This email already have an account.");
-        }
-        if (error === "Firebase: Error (auth/wrong-password).") {
-            setError("You have entered wrong Password.");
-        }
-    }, [error]);
+    
     return {
         signInUsingGoogle,
         user,

@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import './Home.css'
 import useServices from '../../hooks/useServices';
 import sliderPic1 from '../../utilities/slider-image/sld1.jpg'
@@ -16,7 +15,7 @@ const Home = () => {
         <>
             <div>
                 {/* Slider Part */}
-                <div id="carouselExampleIndicators" className="carousel slide test" data-bs-ride="carousel">
+                <div id="carouselExampleIndicators" className="carousel slide slider-part" data-bs-ride="carousel">
                     <div className="carousel-indicators">
                         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1"></button>
                         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -57,31 +56,31 @@ const Home = () => {
 
                     <div className="container mb-2 p-4">
                         <h2 className="text-primary mb-4">Your Family Deserves the Best Dental Care</h2>
-                        <div class="row row-cols-1 row-cols-md-3 g-4">
-                            <div class="col">
-                                <div class="card h-100">
-                                    <img src={doctor1} class="card-img-top" alt="..." />
-                                    <div class="card-body">
-                                        <h5 class="card-title">Meet our Doctor</h5>
-                                        <p class="card-text">Our doctor is committed to providing high quality comprehensive dentistry to patients of all ages.</p>
+                        <div  className="row row-cols-1 row-cols-md-3 g-4">
+                            <div  className="col">
+                                <div  className="card h-100">
+                                    <img src={doctor1}  className="card-img-top" alt="..." />
+                                    <div  className="card-body">
+                                        <h5  className="card-title">Meet our Doctor</h5>
+                                        <p  className="card-text">Our doctor is committed to providing high quality comprehensive dentistry to patients of all ages.</p>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col">
-                                <div class="card h-100">
-                                    <img src={about} class="card-img-top" alt="..." />
-                                    <div class="card-body">
-                                        <h5 class="card-title">We Are Green!</h5>
-                                        <p class="card-text">Dr. Godiwala and our team practice mercury-free dentistry.</p>
+                            <div  className="col">
+                                <div  className="card h-100">
+                                    <img src={about}  className="card-img-top" alt="..." />
+                                    <div  className="card-body">
+                                        <h5  className="card-title">We Are Green!</h5>
+                                        <p  className="card-text">Dr. Godiwala and our team practice mercury-free dentistry.</p>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col">
-                                <div class="card h-100">
-                                    <img src={doctor2} class="card-img-top" alt="..." />
-                                    <div class="card-body">
-                                        <h5 class="card-title">Dr. Neha Asudani</h5>
-                                        <p class="card-text">Dr. Neha Assudani is an Orthodontist, Cosmetic/Aesthetic Dentist and Dentist in Naroda Road. </p>
+                            <div  className="col">
+                                <div  className="card h-100">
+                                    <img src={doctor2}  className="card-img-top" alt="..." />
+                                    <div  className="card-body">
+                                        <h5  className="card-title">Dr. Neha Asudani</h5>
+                                        <p  className="card-text">Dr. Neha Assudani is an Orthodontist, Cosmetic/Aesthetic Dentist and Dentist in Naroda Road. </p>
                                     </div>
                                 </div>
                             </div>
@@ -90,15 +89,15 @@ const Home = () => {
                 </section>
 
 
-                <div className=" test2">
-                <section className="section section-team backgroundPara">
-                    <div className="shell">
-                        <div className="team">
-                            <h1>Quality Dental Care in Cupertino, CA</h1>
-                            <h3>We understand the importance of having a dental practice that provides you with exceptional care in a family friendly environment.</h3>
+                <div className="container quality-dental">
+                    <section className="section section-team backgroundPara">
+                        <div className="shell">
+                            <div className="team">
+                                <h1>Quality Dental Care in Cupertino</h1>
+                                <h3>We understand the importance of having a dental practice that provides you with exceptional care in a family friendly environment.</h3>
+                            </div>
                         </div>
-                    </div>
-                </section>
+                    </section>
                 </div>
             </div>
         </>
