@@ -1,0 +1,17 @@
+.not-found h1{
+    font-size:200px;
+    font-weight:bold;
+    color: rgb(106, 39, 122);
+}
+
+.not-found h2{
+    color: blue;
+    
+}
+
+@media only screen and (max-width: 767px){
+    .not-found  h1{
+        font-size:100px;
+        
+    }
+}

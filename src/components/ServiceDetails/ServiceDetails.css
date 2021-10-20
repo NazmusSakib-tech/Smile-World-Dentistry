@@ -1,0 +1,32 @@
+.service-details{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+}
+
+.service-details img{
+    /* height:400px; */
+    width:100%;
+}
+
+.service-text{
+    padding-left:20px;
+    
+}
+
+@media only screen and (max-width: 767px){
+    .service-details{
+        grid-template-columns: repeat(1, 1fr);
+    }
+    
+    .service-details .service-text{
+        padding:20px;
+        
+    }
+    .service-text p {
+        text-align: left;
+    }
+
+}

@@ -100,7 +100,7 @@ const Register = () => {
                     </Form>
                     <Button onClick={handleGoogleLogin}>Google SignIn</Button>
                 </Card.Body>
-                <p>{error}</p>
+                <p className="text-danger">{error}</p>
             </Card>
             </Container>
             

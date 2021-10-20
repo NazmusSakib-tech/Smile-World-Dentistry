@@ -8,9 +8,9 @@ import initializitionFirebase from "../firebase/firebase.init";
 initializitionFirebase();
 
 const useFirebase = () => {
-    const [user, setUser] = useState({})
-    const [error, setError] = useState("")
-    const [isLoading, setLoading] = useState(true)
+    const [user, setUser] = useState({});
+    const [error, setError] = useState("");
+    const [isLoading, setLoading] = useState(true);
     const auth = getAuth();
 
     /************** Google sign in *******/  
@@ -21,9 +21,8 @@ const useFirebase = () => {
         const googlePovider = new GoogleAuthProvider();
         return signInWithPopup(auth, googlePovider)
             .then((result) => {
-                console.log(result?.user);
                 setUser(result?.user);
-                setLoading(false);
+                
             }).catch((error) => {
                 setError(error.message);
             })
@@ -43,12 +42,12 @@ const useFirebase = () => {
                 setUser({});
                 updateProfile(auth.currentUser, {displayName: name })
                     .catch(error => {
-                        setError(error.massage)
+                        setError(error.message)
                     });
                 logOut();
             })
             .catch((error) => {
-                setError(error.massage)
+                setError(error.message)
                 // ..
             }).finally(() => {
                 setLoading(false);
@@ -62,8 +61,8 @@ const useFirebase = () => {
         setError("");
         return signInWithEmailAndPassword(auth, email, password)
             .catch(error => {
-                setError(error.massage)
-                console.log(error.massage)
+                setError(error.message)
+                console.log(error.message)
             }).finally(() => {
                 setLoading(false);
             })
@@ -79,7 +78,7 @@ const useFirebase = () => {
             setUser({})
             setLoading(false);
         }).catch((error) => {
-            setError(error.massage);
+            setError(error.message);
         }).finally(() => {
             setLoading(false);
         })
