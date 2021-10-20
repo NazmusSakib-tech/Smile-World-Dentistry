@@ -9,23 +9,23 @@ const Header = () => {
     const { user, logOut } = useAuth()
 
     const handleTreatments = () => {
-        if(!(user?.email)){
+        if (!(user?.email)) {
             alert('To Access, Please Register or Login Fast');
         }
     }
     const handleSuggestions = () => {
-        if(!(user?.email)){
+        if (!(user?.email)) {
             alert('To Access, Please Register or Login Fast');
         }
     }
     return (
         <>
             <Navbar collapseOnSelect expand="lg">
-                
+
                 <Container>
-                
+
                     <Navbar.Brand as={Link} to="/home" className="nav-brand">
-                    <h3 className="text-primary">Smile World Dentistry</h3>
+                        <h3 className="text-primary">Smile World Dentistry</h3>
                         <img
                             src={headerLogo}
                             width="170"
@@ -37,11 +37,11 @@ const Header = () => {
                     </Navbar.Brand>
                     <Navbar.Toggle />
                     <Navbar.Collapse className="justify-content-end">
-                        <Nav.Link activeClassName="on-select"  className="text-dark fw-bold mouse-hover" as={NavLink} to="/home">Home</Nav.Link>
+                        <Nav.Link activeClassName="on-select" className="text-dark fw-bold mouse-hover" as={NavLink} to="/home">Home</Nav.Link>
                         <Nav.Link onClick={handleTreatments} activeClassName="on-select" className="text-dark fw-bold mouse-hover ms-2" as={NavLink} to="/alltreatments">Treatments</Nav.Link>
                         <Nav.Link onClick={handleSuggestions} activeClassName="on-select" className="text-dark fw-bold mouse-hover ms-2" as={NavLink} to="/teethsuggestion">Teeth Suggestions</Nav.Link>
-                        
-                       { !(user?.email) && <Nav.Link activeClassName="on-select" className="text-dark fw-bold mouse-hover ms-2 w-sm-50" as={NavLink} to="/register">Register or Login</Nav.Link>}
+
+                        {!(user?.email) && <Nav.Link activeClassName="on-select" className="text-dark fw-bold mouse-hover ms-2 w-sm-50" as={NavLink} to="/register">Register or Login</Nav.Link>}
                         {user?.email && <Navbar.Text className="ms-2 text-primary">
                             Signed in as: <span className="user-name-text fw-bold">{user.displayName}</span>
                         </Navbar.Text>}

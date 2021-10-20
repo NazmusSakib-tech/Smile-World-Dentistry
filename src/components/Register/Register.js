@@ -33,7 +33,6 @@ const Register = () => {
 
 
     const handleLogin = () => {
-        console.log(email, password);
         logIn(email, password)
         .then((result) => {
             const user = result?.user;
@@ -96,10 +95,10 @@ const Register = () => {
                             <Form.Check onClick={handleCheckBox} type="checkbox" className="text-primary" label="Is New User?" />
                         </Form.Group>
                         <Button variant="primary" type="submit" className="mb-2">
-                        <i class="fas fa-sign-in-alt"></i> {checkbox ===false? "Login": "Register"}
+                        <i className="fas fa-sign-in-alt"></i> {checkbox ===false? "Login": "Register"}
                         </Button>
                     </Form>
-                    <Button onClick={handleGoogleLogin}><i class="fab fa-google"></i> Google SignIn</Button>
+                    <Button onClick={handleGoogleLogin}><i className="fab fa-google"></i> Google SignIn</Button>
                 </Card.Body>
                 <p className="text-danger">{error}</p>
             </Card>
