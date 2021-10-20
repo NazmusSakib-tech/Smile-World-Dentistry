@@ -13,7 +13,8 @@ const useFirebase = () => {
     const [isLoading, setLoading] = useState(true)
     const auth = getAuth();
 
-    // google sign in 
+    /************** Google sign in *******/  
+
     const signInUsingGoogle = () => {
         setLoading(true);
         setError("");
@@ -31,15 +32,16 @@ const useFirebase = () => {
             })
     }
 
-    // ***************By email Register in************* 
+    // ***************By Email Register in************* 
+
     const registration = (email, password, name) => {
         setLoading(true);
         setError("");
         return createUserWithEmailAndPassword(auth, email, password)
-
+            
             .then(() => {
                 setUser({});
-                updateProfile(auth.currentUser, { displayName: name })
+                updateProfile(auth.currentUser, {displayName: name })
                     .catch(error => {
                         setError(error.massage)
                     });
@@ -54,16 +56,20 @@ const useFirebase = () => {
     }
 
     //*********************By email Log In*************/
+
     const logIn = (email, password) => {
         setLoading(true);
         setError("");
         return signInWithEmailAndPassword(auth, email, password)
-            .catch((error) => {
+            .catch(error => {
                 setError(error.massage)
+                console.log(error.massage)
             }).finally(() => {
                 setLoading(false);
             })
     }
+
+    /*********Log Out Function**************/
 
     const logOut = () => {
         setLoading(true);
@@ -84,9 +90,7 @@ const useFirebase = () => {
     useEffect(() => {
         return onAuthStateChanged(auth, (user) => {
             if (user) {
-
                 setUser(user)
-
             } else {
                 setUser({})
             }

@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import { Button, Card, Form } from 'react-bootstrap';
+import { Button, Card, Container, Form } from 'react-bootstrap';
 import { useHistory, useLocation } from 'react-router';
 import useAuth from '../../hooks/useAuth';
+import './Register.css'
 
 
 
@@ -34,8 +35,12 @@ const Register = () => {
     const handleLogin = () => {
         console.log(email, password);
         logIn(email, password)
-        .then(() => {
-           history.push(redirect_uri)
+        .then((result) => {
+            const user = result?.user;
+            if(user){
+                history.push(redirect_uri)
+            }
+           
         })
     }
     
@@ -62,14 +67,15 @@ const Register = () => {
 
     return (
         <>
-            <Card style={{ width: '25rem' }} className="m-auto">
+            <Container className="my-4">
+            <Card  className="m-auto card-size" style={{ width: '22rem' }}>
                 <Card.Body>
                     <h2 className="text-center mb-4">{checkbox===false? "Login" : "Register"}</h2>
                     <Form onSubmit={(e)=> {e.preventDefault(); checkbox ===false? handleLogin(): handleRegistration()}}>
 
                     {checkbox ===false? "" :<Form.Group className="mb-3" controlId="formBasicEmail">
                             <Form.Label>Your Name</Form.Label>
-                            <Form.Control onBlur={handleName} type="text" placeholder="Enter Name" required />
+                            <Form.Control onBlur={handleName} type="text" className="pe-2"  placeholder="Enter Name" required />
                             
                         </Form.Group>}
 
@@ -83,19 +89,20 @@ const Register = () => {
 
                         <Form.Group className="mb-3" controlId="formBasicPassword">
                             <Form.Label>Password</Form.Label>
-                            <Form.Control onBlur={handlePassword} type="password" placeholder="Password" required />
+                            <Form.Control onBlur={handlePassword} type="password"  placeholder="Password" required />
                         </Form.Group>
                         <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                            <Form.Check onClick={handleCheckBox} type="checkbox" label="New User?" />
+                            <Form.Check onClick={handleCheckBox} type="checkbox" className="text-primary" label="Is New User?" />
                         </Form.Group>
                         <Button variant="primary" type="submit" className="mb-2">
-                            Submit
+                            {checkbox ===false? "Login": "Register"}
                         </Button>
                     </Form>
                     <Button onClick={handleGoogleLogin}>Google SignIn</Button>
                 </Card.Body>
                 <p>{error}</p>
             </Card>
+            </Container>
             
         </>
     );

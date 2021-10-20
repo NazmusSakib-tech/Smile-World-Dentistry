@@ -56,6 +56,9 @@
     .slider-part{
         margin:10px;
     }
+    .slider-part img{
+        height: 160px;
+    }
     .quality-dental{
         padding:20px;
     }
