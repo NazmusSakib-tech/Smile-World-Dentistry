@@ -49,6 +49,7 @@ const Register = () => {
         registration(email, password, name)
         .then(() => {
             // history.push(redirect_uri);
+            alert("SuccesFully! Register, Now Login")
             setcheckbox(false)
         })
     }
@@ -68,8 +69,8 @@ const Register = () => {
     return (
         <>
             <Container className="my-4">
-            <Card  className="m-auto card-size" style={{ width: '22rem' }}>
-                <Card.Body>
+            <Card  className="m-auto " style={{width:"80%"}}>
+                <Card.Body className="p-3 m-auto">
                     <h2 className="text-center mb-4">{checkbox===false? "Login" : "Register"}</h2>
                     <Form onSubmit={(e)=> {e.preventDefault(); checkbox ===false? handleLogin(): handleRegistration()}}>
 
@@ -95,10 +96,10 @@ const Register = () => {
                             <Form.Check onClick={handleCheckBox} type="checkbox" className="text-primary" label="Is New User?" />
                         </Form.Group>
                         <Button variant="primary" type="submit" className="mb-2">
-                            {checkbox ===false? "Login": "Register"}
+                        <i class="fas fa-sign-in-alt"></i> {checkbox ===false? "Login": "Register"}
                         </Button>
                     </Form>
-                    <Button onClick={handleGoogleLogin}>Google SignIn</Button>
+                    <Button onClick={handleGoogleLogin}><i class="fab fa-google"></i> Google SignIn</Button>
                 </Card.Body>
                 <p className="text-danger">{error}</p>
             </Card>

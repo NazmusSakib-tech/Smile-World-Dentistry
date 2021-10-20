@@ -6,7 +6,7 @@ const TeethSuggestion = () => {
         <div className="teeth-suggestion">
             <div className="container">
                 <div className="">
-                    <h1 className="text-warning">11 Ways to Keep Your Teeth Healthy</h1>
+                    <h1 className="text-warning">Six(06) Ways to Keep Your Teeth Healthy</h1>
                     <div class="row row-cols-1 row-cols-md-3 g-4 p-4 opacity-75">
                         <div class="col">
                             <div class="card h-100">

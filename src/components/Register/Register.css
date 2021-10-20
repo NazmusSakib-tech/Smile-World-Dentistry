@@ -5,9 +5,7 @@
 
 
 @media only screen and (max-width: 767px){
-    .card-size{
-       width:20rem; 
-    }
+    
     .form-size{
         width: 50%;
     }
